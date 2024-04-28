@@ -12,8 +12,8 @@ async def run_sequence(*functions: Awaitable[Any]) -> None:
         await function
 
 
-async def run_parallel(*functions: Awaitable[Any]) -> None:
-    await asyncio.gather(*functions)
+async def run_parallel(*functions: Awaitable[Any]) -> tuple[Any]:
+    return await asyncio.gather(*functions)
 
 
 async def main() -> None:
